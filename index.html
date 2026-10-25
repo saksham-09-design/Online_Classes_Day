@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claim Your Online Education Day Badge | Saksham Loona</title>
+  
+  <!-- Meta tags for social previews -->
+  <meta name="description" content="Claim Your Online Education Day Badge. Complete the interactive quiz to claim and download your verified course badge in AI Tools and MS Excel by Saksham Loona.">
+  <meta property="og:title" content="Claim Your Online Education Day Badge - Saksham Loona">
+  <meta property="og:description" content="Master 20+ AI Tools and MS Excel with AI. Take the quick quiz and unlock your official commemorative digital badge!">
+  <meta property="og:image" content="assets/ai-badge.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/ai-badge.png">
+
+  <!-- Google Fonts: Cinzel & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Animated Glowing Orbs Background -->
+  <div class="bg-ambient-orb orb-1"></div>
+  <div class="bg-ambient-orb orb-2"></div>
+  <div class="bg-ambient-orb orb-3"></div>
+
+  <!-- Navigation Bar: Clean, sound option removed, title updated -->
+  <nav class="navbar">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <a href="#" class="nav-brand">
+        <div class="brand-logo-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <div>
+          <div class="brand-title">Claim Your Online Education Day Badge</div>
+          <div class="brand-subtitle">Mentored by Saksham Loona</div>
+        </div>
+      </a>
+      <div class="nav-controls">
+        <a href="#educator-section" class="btn btn-secondary" style="padding: 9px 18px; font-size: 0.85rem;">
+          <i class="fas fa-user-tie"></i> Educator Profile
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="container" style="padding-top: 35px;">
+
+    <!-- STEPPER INDICATOR -->
+    <div class="stepper-wrapper">
+      <div class="step-item active" id="step-nav-1">
+        <div class="step-bubble">1</div>
+        <span>Select Course &amp; Name</span>
+      </div>
+      <div class="step-divider"></div>
+      <div class="step-item" id="step-nav-2">
+        <div class="step-bubble">2</div>
+        <span>Quick Quiz</span>
+      </div>
+      <div class="step-divider"></div>
+      <div class="step-item" id="step-nav-3">
+        <div class="step-bubble">3</div>
+        <span>Download Badge</span>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         STEP 1: ENROLLMENT & IDENTIFICATION FORM
+         ========================================== -->
+    <section id="enrollment-section">
+      <div class="glass-card enrollment-card">
+        <div class="card-header">
+          <h2>Student Verification</h2>
+          <p>Select your enrolled course and enter your full name as you want it displayed on your badge.</p>
+        </div>
+
+        <form id="enrollment-form">
+          <!-- Course Selection Dropdown -->
+          <div class="form-group">
+            <label class="form-label" for="course-select">
+              <i class="fas fa-graduation-cap"></i> Select Enrolled Course
+            </label>
+            <div class="input-wrapper">
+              <select id="course-select" required>
+                <option value="" disabled selected>-- Choose your enrolled course --</option>
+                <option value="Ultimate AI Course Toolkit - Master 20+ AI Tools with Free Prompt Book">
+                  Ultimate AI Course Toolkit - Master 20+ AI Tools with Free Prompt Book
+                </option>
+                <option value="MS Excel Course with AI - Excel the MS Excel with AI">
+                  MS Excel Course with AI - Excel the MS Excel with AI
+                </option>
+                <option value="Both Courses">
+                  Both Courses (Earn 2 Badges)
+                </option>
+              </select>
+            </div>
+            <span class="input-hint">
+              <i class="fas fa-info-circle"></i> Single course = 5 MCQs | Both Courses = 8 MCQs (4 AI + 4 Excel).
+            </span>
+          </div>
+
+          <!-- Student Name Input -->
+          <div class="form-group">
+            <label class="form-label" for="student-name">
+              <i class="fas fa-user-graduate"></i> Student Full Name
+            </label>
+            <div class="input-wrapper">
+              <input 
+                type="text" 
+                id="student-name" 
+                placeholder="e.g. John Doe / Priya Sharma" 
+                maxlength="45"
+                required
+                autocomplete="name"
+              >
+            </div>
+            <span class="input-hint">
+              <i class="fas fa-signature"></i> Your name will be inscribed in elegant lettering on your badge.
+            </span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="start-quiz-btn" class="btn btn-primary btn-block">
+            <span>Start Badge Challenge</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         STEP 2: INTERACTIVE KNOWLEDGE QUIZ
+         ========================================== -->
+    <section id="quiz-section" class="hidden">
+      <div class="glass-card quiz-card">
+        <!-- Progress & Topic Bar -->
+        <div class="quiz-meta-bar">
+          <span class="question-count" id="question-number">Question 1 of 5</span>
+          <span class="topic-badge topic-ai" id="question-topic-badge">
+            <i class="fas fa-brain"></i> Ultimate AI Toolkit
+          </span>
+        </div>
+
+        <div class="quiz-progress-track">
+          <div class="quiz-progress-fill" id="quiz-progress-bar" style="width: 0%;"></div>
+        </div>
+
+        <!-- Question Prompt -->
+        <h3 class="question-title" id="question-text">
+          Loading question...
+        </h3>
+
+        <!-- MCQ Options Grid -->
+        <div class="options-grid" id="options-container">
+          <!-- Populated dynamically via app.js -->
+        </div>
+
+        <!-- Educational Feedback Banner -->
+        <div class="question-feedback hidden" id="question-feedback">
+          <!-- Populated on option click -->
+        </div>
+
+        <!-- Next / Complete Button -->
+        <div class="quiz-actions">
+          <button type="button" id="next-question-btn" class="btn btn-primary hidden">
+            <span>Next Question</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         STEP 3: RESULTS & BADGE SHOWCASE SECTION
+         ========================================== -->
+    <section id="results-section" class="hidden">
+      <div class="glass-card results-card">
+        
+        <!-- Score Summary Banner -->
+        <div class="results-summary-box">
+          <div class="score-rings-container">
+            <div class="score-stat">
+              <div class="score-val" id="results-score">5/5</div>
+              <div class="score-lbl">Score Achieved</div>
+            </div>
+            <div class="score-stat">
+              <div class="score-val" id="results-percent">100%</div>
+              <div class="score-lbl">Proficiency</div>
+            </div>
+          </div>
+          <div class="results-message" id="results-message">
+            <!-- Dynamic celebration message -->
+          </div>
+        </div>
+
+        <!-- Badge Showcase Section -->
+        <div class="badge-showcase-heading">
+          <h3>Your Commemorative Digital Badge<span id="badge-plural-s">s</span></h3>
+          <p>Rendered in a high-resolution shaped silhouette. Hover to view the 3D tilt sheen!</p>
+        </div>
+
+        <!-- Badge Canvas Wrapper(s) -->
+        <div class="badges-container" id="badge-showcase-area">
+          <!-- Rendered dynamically: AI Badge, Excel Badge, or Both! -->
+        </div>
+
+        <!-- Batch Download Button (Shown when Both Courses selected) -->
+        <div class="batch-download-wrap">
+          <button type="button" id="download-all-btn" class="btn btn-primary hidden" style="padding: 16px 36px;">
+            <i class="fas fa-download"></i> Download Both Badges (Batch PNG)
+          </button>
+        </div>
+
+        <!-- Retry and Review Controls -->
+        <div class="results-bottom-controls">
+          <button type="button" id="retake-quiz-btn" class="btn btn-secondary">
+            <i class="fas fa-rotate-right"></i> Retake Quiz (Multiple Attempts Allowed)
+          </button>
+          <button type="button" id="review-questions-btn" class="btn btn-secondary">
+            <i class="fas fa-list-check"></i> Review Answers &amp; Explanations
+          </button>
+        </div>
+
+        <!-- Answer Review Dropdown/Container -->
+        <div class="review-container hidden" id="review-container">
+          <!-- Populated when user clicks Review Answers -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         EDUCATOR PROFILE SECTION (Saksham Loona)
+         ========================================== -->
+    <section class="educator-section" id="educator-section">
+      <div class="glass-card educator-card">
+        <div class="educator-photo-col">
+          <div class="educator-photo-frame">
+            <!-- Robust local file + assets fallback so image ALWAYS renders on local & online -->
+            <img 
+              src="assets/saksham.png" 
+              onerror="this.onerror=null; this.src='saksham.sanjay.kumar.png';" 
+              alt="Saksham Loona - Educator"
+            >
+          </div>
+          <!-- Robust local file + assets fallback for signature -->
+          <img 
+            src="assets/sign.png" 
+            onerror="this.onerror=null; this.src='Sign.png';" 
+            alt="Saksham Loona Signature" 
+            class="educator-sign-preview"
+          >
+        </div>
+        
+        <div class="educator-info-col">
+          <h3>Saksham Loona</h3>
+          <span class="educator-role-badge">
+            <i class="fas fa-chalkboard-teacher"></i> Educator for these courses
+          </span>
+
+          <!-- Certifications Chips -->
+          <div class="cert-chips-list">
+            <span class="cert-chip"><i class="fas fa-check-circle" style="color: #6366f1;"></i> 4x Claude Certified</span>
+            <span class="cert-chip"><i class="fas fa-check-circle" style="color: #38bdf8;"></i> 3x Google Certified</span>
+            <span class="cert-chip"><i class="fas fa-check-circle" style="color: #10b981;"></i> 2x SAP Certified</span>
+            <span class="cert-chip"><i class="fas fa-check-circle" style="color: #f59e0b;"></i> 2x Open AI Certified</span>
+          </div>
+
+          <p class="educator-bio">
+            Dedicated to democratizing next-generation Artificial Intelligence and Spreadsheet Automation skills. 
+            Mentoring thousands of ambitious students and professionals to 10x their productivity through practical, 
+            hands-on prompt engineering and AI-driven workflows.
+          </p>
+
+          <!-- Social Links -->
+          <div class="educator-social-row">
+            <a href="https://www.linkedin.com/in/saksham-loona-716248291/" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/saksham_loona/" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="Instagram Profile" aria-label="Instagram Profile">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:sakshamloona9@gmail.com" class="social-link-btn" title="Email Saksham" aria-label="Email Saksham">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         THREE COURSES SHOWCASE SECTION
+         1. MS Excel Course with AI (FMSM + Udemy)
+         2. Ultimate AI Course Toolkit (FMSM + Udemy)
+         3. Both Courses Combo (FMSM only)
+         ========================================== -->
+    <section class="platforms-section" id="courses-section">
+      <h2 class="section-title">Explore Saksham's Courses</h2>
+      <p class="section-subtitle">
+        Master industry-grade AI tools and advanced Excel automation across top learning platforms:
+      </p>
+
+      <div class="platforms-grid">
+        
+        <!-- Course 1: MS Excel Course with AI (2 Links: FMSM + Udemy) -->
+        <div class="platform-card course-card-excel">
+          <div>
+            <div class="platform-icon-wrap" style="background: linear-gradient(135deg, #10b981, #065f46); color: #fff;">
+              <i class="fas fa-file-excel"></i>
+            </div>
+            <h4>MS Excel Course with AI</h4>
+            <p style="font-weight: 600; color: #34d399; margin-bottom: 8px;">Excel the MS Excel with AI</p>
+            <p>
+              Master modern formulas, XLOOKUP, AI-powered pattern recognition (Flash Fill), and Microsoft Copilot in Excel for intelligent spreadsheet automation.
+            </p>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+            <!-- Modify FMSM with Om App link for Excel Course here -->
+            <a href="https://eis.on-app.in/app/oc/697415/eis?utm_source=copy-link&utm_medium=student-course-referral&utm_campaign=course-overview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.9rem; padding: 12px 18px;">
+              <i class="fas fa-mobile-screen-button" style="color: #10b981;"></i>
+              <span>FMSM with Om App</span>
+              <i class="fas fa-external-link-alt" style="font-size: 0.75rem; margin-left: auto;"></i>
+            </a>
+
+            <!-- Modify Udemy link for Excel Course here -->
+            <a href="https://www.udemy.com/course/microsoft-excel-course-in-hindi-excel-the-microsoft-excel/?referralCode=6B7A6A79ED2788F10C9A" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.9rem; padding: 12px 18px;">
+              <i class="fab fa-udemy" style="color: #a435f0;"></i>
+              <span>Udemy Course</span>
+              <i class="fas fa-external-link-alt" style="font-size: 0.75rem; margin-left: auto;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Course 2: Ultimate AI Course Toolkit (2 Links: FMSM + Udemy) -->
+        <div class="platform-card course-card-ai">
+          <div>
+            <div class="platform-icon-wrap" style="background: linear-gradient(135deg, #38bdf8, #4f46e5); color: #fff;">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h4>Ultimate AI Course Toolkit</h4>
+            <p style="font-weight: 600; color: #38bdf8; margin-bottom: 8px;">Master 20+ AI Tools with Free Prompt Book</p>
+            <p>
+              Master prompt engineering frameworks, ChatGPT, Claude, Midjourney, Perplexity, and over 20+ essential AI productivity tools with a free curated prompt book.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+            <!-- Modify FMSM with Om App link for AI Course here -->
+            <a href="https://eis.on-app.in/app/oc/813127/eis?utm_source=copy-link&utm_medium=student-course-referral&utm_campaign=course-overview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.9rem; padding: 12px 18px;">
+              <i class="fas fa-mobile-screen-button" style="color: #38bdf8;"></i>
+              <span>FMSM with Om App</span>
+              <i class="fas fa-external-link-alt" style="font-size: 0.75rem; margin-left: auto;"></i>
+            </a>
+
+            <!-- Modify Udemy link for AI Course here -->
+            <a href="https://www.udemy.com/course/ai-tools-course-master-20-ai-tools-with-free-prompt-book/?referralCode=991DB272357D9C10D750" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.9rem; padding: 12px 18px;">
+              <i class="fab fa-udemy" style="color: #a435f0;"></i>
+              <span>Udemy Course</span>
+              <i class="fas fa-external-link-alt" style="font-size: 0.75rem; margin-left: auto;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Course 3: Both Courses Combo (1 Link: FMSM with Om App only) -->
+        <div class="platform-card course-card-both">
+          <div>
+            <div class="platform-icon-wrap" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff;">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h4>Both Courses Combo</h4>
+            <p style="font-weight: 600; color: #fbbf24; margin-bottom: 8px;">Complete AI &amp; Excel Mastery Bundle</p>
+            <p>
+              The ultimate dual package combining generative AI power tools and advanced spreadsheet automation for ambitious students and working professionals.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+            <!-- Modify FMSM with Om App link for Both Courses Combo here -->
+            <a href="https://eis.on-app.in/app/oc/811126/eis?utm_source=copy-link&utm_medium=student-course-referral&utm_campaign=course-overview" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.9rem; padding: 12px 18px;">
+              <i class="fas fa-mobile-screen-button"></i>
+              <span>FMSM with Om App</span>
+              <i class="fas fa-external-link-alt" style="font-size: 0.75rem; margin-left: auto;"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p><strong>Happy Online Education Day 2026</strong> • Celebrating continuous growth, knowledge, and digital literacy.</p>
+      <p>Courses mentored by <strong>Saksham Loona</strong> — 4x Claude, 3x Google, 2x SAP &amp; 2x Open AI Certified.</p>
+      <p style="margin-top: 10px; color: var(--text-dim); font-size: 0.8rem;">
+        &copy; 2026 Saksham Loona. All rights reserved. Ready for GitHub Pages hosting.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Confetti Library for Celebrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="js/sign-data.js"></script>
+  <script src="js/badge-icons-data.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/badge-generator.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
